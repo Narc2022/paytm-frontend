@@ -8,6 +8,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
+        <h2>Navigation Bar</h2>
         <Routes>
           <Route path="/signup" element={<Signup />} />
           <Route path="/signin" element={<Signin />} />
