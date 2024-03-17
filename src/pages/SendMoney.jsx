@@ -1,6 +1,7 @@
 import { useSearchParams } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
+import { production } from "../constants";
 
 export const SendMoney = () => {
   const [searchParams] = useSearchParams();
@@ -45,7 +46,7 @@ export const SendMoney = () => {
               <button
                 onClick={() => {
                   axios.post(
-                    "http://localhost:3000/api/v1/account/transfer",
+                    `${production.root}/api/v1/account/transfer`,
                     {
                       to: id,
                       amount,

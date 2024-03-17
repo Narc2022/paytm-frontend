@@ -6,6 +6,7 @@ import { Button } from "../components/Button";
 import BottomWarning from "../components/BottomWarning";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { production } from "../constants";
 export const Signup = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -48,7 +49,7 @@ export const Signup = () => {
               label={"Sign up"}
               onClick={async () => {
                 const response = await axios.post(
-                  "http://localhost:3000/api/v1/user/signup",
+                  `${production.root}/api/v1/user/signup`,
                   {
                     username,
                     firstName,
